@@ -1,11 +1,136 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
-	<title>Fitness</title>
-</head>
-<body>
-	<h1>Fitness</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Fitness</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="header__logo">
+        <img
+          src="./images/logo.png"
+          class="header__logo-image"
+          width="136"
+          height="26"
+          alt="logo"
+          loading="lazy"
+        />
+      </a>
+      <nav class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link is-current">home</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">pages</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">portfolio</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">blog</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">shop</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button type="button" class="header__book-button button">
+          Book now
+        </button>
+        <button title="Open menu" class="header__burger-button">
+          <span class="visually-hidden">Open menu</span>
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 39.5C30.7696 39.5 39.5 30.7696 39.5 20C39.5 9.23045 30.7696 0.5 20 0.5C9.23045 0.5 0.5 9.23045 0.5 20C0.5 30.7696 9.23045 39.5 20 39.5Z"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="1"
+            />
+            <path
+              d="M9.5 14.5H17"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              d="M24 14.5H31.5"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              d="M9.5 20H17"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              d="M24 20H31.5"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              d="M9.5 25.5H17"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              d="M24 25.5H31.5"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              fill="none"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main class="content">
+      <section class="banner">
+        <h1 class="visually-hidden">Cropp fitness club</h1>
+        <div class="banner__body">
+          <h2 class="visually-hidden">Upcoming events</h2>
+          <div class="banner__info">
+            New event <br />
+            coming up/<time datetime="06-07">june 7</time>&nbsp;-&nbsp;
+            <time datetime="06-13"> 13 </time>
+          </div>
+          <h3 class="banner__title">crossfit</h3>
+        </div>
+        <div class="banner__pagination">
+          <ul class="banner__pagination-list">
+            <li class="banner__pagination-item">
+              <button type="button" class="banner__pagination-button"></button>
+            </li>
+            <li class="banner__pagination-item">
+              <button type="button" class="banner__pagination-button"></button>
+            </li>
+            <li class="banner__pagination-item">
+              <button
+                type="button"
+                class="banner__pagination-button is-current__btn"
+              ></button>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
