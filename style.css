@@ -716,8 +716,6 @@ a:hover {
   top: -0.40em;
   left: 8%;
 }
-
-
 .calculate__title:not(:last-child) {
   margin-bottom: 16px;
 }
@@ -773,6 +771,33 @@ select.input:invalid{
   border-collapse: collapse;
 }
 
+.calculate__table :is(td, th) {
+  padding-right: 30px;
+}
+.calculate__table :is(td, th):not(:first-child) {
+  padding-left: 20px;
+}
+
+.calculate__table :is(td, th):not(:last-child) {
+  border-right: 1px solid var(--color-light-gray);
+}
+
+.calculate__table tbody td {
+  border-top: 1px solid var(--color-light-gray);;
+}
+
+.calculate__table tbody tr:last-child td:first-child {
+  position: relative;
+}
+
+.calculate__table tbody tr:last-child td:first-child::after{
+  content: '';
+  position: absolute;
+  width: 65%;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid var(--color-light-gray);
+}
 .calculate__table th {
   font-weight: 700;
   font-size: 16px;
@@ -803,14 +828,20 @@ select.input:invalid{
   line-height: 175%;
   letter-spacing: 0.05em;
   color:var(--color-light-gray);
-  padding-block: 15px;
+  padding-block: 14px;
 }
 
-
+.calculate__table tfoot td {
+  padding-top: 33px;
+  padding-bottom: 0;
+}
 
 .calculate__form-select.wide {
   grid-column: 1 / -1;
 }
+/*Footer*/
+
+
 
 /*Media queries Header*/
 @media (max-width: 1300px) {
@@ -825,7 +856,7 @@ select.input:invalid{
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 1184px) {
+@media (max-width: 1110px) {
   .motivation__card {
     column-gap: 141px;
   }
@@ -871,6 +902,13 @@ select.input:invalid{
   .location {
     display: flex;
     flex-direction: column-reverse;
+  }
+  .calculate {
+    padding-block: 100px;
+  }
+  .calculate__form-body {
+    grid-template-columns: 1fr;
+    gap: 18px 30px;
   }
 }
 @media (max-width: 760px) {
@@ -962,5 +1000,31 @@ select.input:invalid{
 
   .family-title {
     font-size: 40px;
+  }
+  .calculate__inner {
+    column-gap: 20px;
+  }
+
+  .calculate__table :is(td, th) {
+    padding-block: 10px;
+  }
+
+  .calculate__table tfoot td {
+    padding-top: 10px;
+  }
+
+  .calculate__inner {
+   flex-direction: column;
+    row-gap: 60px;
+  }
+
+  .calculate__table-wrapper {
+    &::after {
+      display: none;
+    }
+  }
+
+  .calculate {
+    padding-block: 60px;
   }
 }
