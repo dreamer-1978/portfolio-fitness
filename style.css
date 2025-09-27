@@ -178,8 +178,6 @@ p:not([class]):not(:last-child) {
   }
 }
 
-
-
 a, button, input, textarea, svg {
   transition: var(--transition-duration);
 }
@@ -293,6 +291,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  fill: transparent;
   border: none;
   width: 40px;
   aspect-ratio: 1;
@@ -433,26 +432,26 @@ a:hover {
 
 
 
-.training__types {
+.training-types {
   position: relative;
   padding-top: 70px;
   padding-bottom: 120px;
   background-color: var(--color-dark);
 }
 
-.training__types-list {
+.training-types-list {
   position: relative;
   margin-inside: auto;
   max-width: 1920px;
 }
 
-.training__types-list {
+.training-types-list {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 60px;
 }
 
-.training__types-item {
+.training-types-item {
   --traniningIconSyze: 80px;
 
   position: relative;
@@ -465,7 +464,7 @@ a:hover {
   background: url("./icons/arr-pointer.svg") 100% 0/var(--traniningIconSyze) no-repeat;
   }
 
-.training__types-item-title {
+.training-types-item-title {
   font-weight: 700;
   font-size: 16px;
   line-height: 175%;
@@ -730,13 +729,11 @@ a:hover {
   margin-bottom: 30px;
 }
 
-.calculate__form {}
 .calculate__form-body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px 30px;
 }
-.calculate__form-input {}
 .input::placeholder,
 select.input:invalid{
   color: var(--color-light-gray);
@@ -840,7 +837,105 @@ select.input:invalid{
   grid-column: 1 / -1;
 }
 /*Footer*/
+.footer {
+--footerLogoWight: 20.77%
+}
+.footer__main {
+  padding-top: 140px;
+  padding-bottom: 160px;
+}
 
+.footer__header,
+.footer__body {
+  display: grid;
+  column-gap: 62px;
+}
+
+.footer__header {
+  grid-template-columns: var(--footerLogoWight) auto;
+}
+.footer__header:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.footer__logo-img {
+  height: auto;
+}
+.footer__description {
+  text-align: left;
+}
+.footer__body {
+  grid-template-columns: var(--footerLogoWight) repeat(3, 1fr);
+}
+.footer__column {}
+.footer__column-title {
+  position: relative;
+  font-size: clamp(18px, 1.15vw, 22px);
+  &:not(:last-child){
+    margin-bottom: 15px;
+  }
+}
+.footer__column-title.has-arrow::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  height: 0.74em;
+  margin-left: 0.5em;
+  aspect-ratio: 1;
+  background: url("./icons/strart-row.svg") center/cover no-repeat;
+}
+
+.footer__form-subscribe {
+  position: relative;
+
+  &:not(:last-child){
+    margin-bottom: 30px;
+  }
+}
+
+.footer__form-input.input {
+  padding-right: 70px;
+}
+
+.footer__form-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  border: var(--border);
+  border-radius: 50%;
+  background: transparent url("./icons/row-button.svg") no-repeat center;
+
+  &:hover {
+    background-color: var(--color-light-gray);
+  }
+}
+
+.footer__soc1als-list {
+  display: flex;
+  align-items: center;
+  column-gap: 18px;
+}
+
+.footer__soc1als-link {
+  display: flex;
+  width: 20px;
+  aspect-ratio: 1;
+}
+
+.footer__extra {
+  padding-block: 15px;
+  background-color: var(--color-dark-alternative);
+}
+
+.footer__copy-right {
+  color: var(--color-light);
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+}
 
 
 /*Media queries Header*/
@@ -848,12 +943,20 @@ select.input:invalid{
   .motivation__card-img {
     margin-block: -20px;
   }
-  .training__types-list {
+  .training-types-list {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
   .location {
     grid-template-columns: 1fr;
+  }
+  .motivation__card-description p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+  }
+  .motivation__card-description {
+    width: 340px;
   }
 }
 @media (max-width: 1110px) {
@@ -910,6 +1013,19 @@ select.input:invalid{
     grid-template-columns: 1fr;
     gap: 18px 30px;
   }
+  .motivation__card-description {
+    width: 300px;
+  }
+  .footer__main {
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+  .footer__body {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+
+
 }
 @media (max-width: 760px) {
   .button {
@@ -947,14 +1063,14 @@ select.input:invalid{
     margin-bottom: 10px;
   }
 
-  .training__types-list {
+  .training-types-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  .training__types-item {
+  .training-types-item {
     --traniningIconSyze: 50px;
   }
-  .training__types-img {
+  .training-types-img {
     max-width: 120px;
   }
 
@@ -1026,5 +1142,17 @@ select.input:invalid{
 
   .calculate {
     padding-block: 60px;
+  }
+  .footer__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin-bottom: 30px;
+  }
+  .footer__main {
+    padding-top: 50px;
+  }
+  .footer__header:not(:last-child) {
+    margin-bottom: 30px;
   }
 }
